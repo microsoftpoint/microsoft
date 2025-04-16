@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Case 78667 - Microsoft Support</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to bottom right, #f3f6fa, #ffffff);
+    }
+
+    .header, .footer {
+      background-color: #ffffff;
+      border-bottom: 1px solid #ccc;
+      padding: 14px 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .footer {
+      border-top: 1px solid #ccc;
+      border-bottom: none;
+      font-size: 13px;
+      color: #666;
+      justify-content: center;
+    }
+
+    .logo {
+      height: 26px;
+    }
+
+    .nav-links a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: #444;
+      font-weight: 500;
+      font-size: 14px;
+    }
+
+    .nav-links a:hover {
+      text-decoration: underline;
+    }
+
+    .right-section {
+      display: flex;
+      align-items: center;
+    }
+
+    .search-box {
+      padding: 6px 10px;
+      font-size: 14px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      margin-right: 15px;
+    }
+
+    .profile-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+    }
+
+    .main {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 60px 20px;
+    }
+
+    .content {
+      max-width: 600px;
+      width: 100%;
+      text-align: center;
+      background: #fff;
+      padding: 40px 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .technician-img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin: 20px 0;
+      box-shadow: 0 0 6px rgba(0,0,0,0.2);
+    }
+
+    .stars span {
+      font-size: 26px;
+      cursor: pointer;
+      color: #ccc;
+    }
+
+    .stars span:hover,
+    .stars span.active {
+      color: gold;
+    }
+
+    .call-form input {
+      width: 90%;
+      padding: 10px;
+      margin: 6px 0;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+
+    .call-form button {
+      padding: 10px 20px;
+      margin-top: 10px;
+      background-color: #0078d4;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .call-form button:hover {
+      background-color: #005ea6;
+    }
+
+    button.primary {
+      padding: 10px 20px;
+      margin-top: 25px;
+      background-color: #0078d4;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    button.primary:hover {
+      background-color: #005ea6;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="header">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/9/96/Microsoft_logo_%282012%29.svg" alt="Microsoft Logo" class="logo">
+    <div class="nav-links">
+      <a href="#">Products</a>
+      <a href="#">Support</a>
+      <a href="#">Downloads</a>
+      <a href="#">Help</a>
+    </div>
+    <div class="right-section">
+      <input type="text" placeholder="Search..." class="search-box">
+      <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Profile" class="profile-icon">
+    </div>
+  </div>
+
+  <!-- Main Body -->
+  <div class="main">
+    <div class="content">
+      <h2>Technician Assigned: Jerry Stewart</h2>
+      <p>Case ID: 78667 | Employee ID: JS22494</p>
+
+      <!-- 👇 Technician Image -->
+      <img src="WhatsApp Image 2025-04-16 at 21.33.43_7dead258.jpg" alt="Technician" class="technician-img">
+
+      <p><strong>Specialization:</strong> Network Troubleshooting & Remote Support</p>
+      <p><strong>Email:</strong> jerry.stewart@microsoftsupport.com</p>
+      <p><strong>Support Number:</strong> +1 206 279 9715</p>
+
+      <!-- Rating -->
+      <div style="margin-top: 30px;">
+        <p style="font-size: 14px; color: #333;">You can rate your technician service once the case is resolved</p>
+        <h3>Rate Support</h3>
+        <div class="stars" id="starRating">
+          <span onclick="rate(1)">★</span>
+          <span onclick="rate(2)">★</span>
+          <span onclick="rate(3)">★</span>
+          <span onclick="rate(4)">★</span>
+          <span onclick="rate(5)">★</span>
+        </div>
+        <p id="rating-msg" style="margin-top:10px; font-size:14px; color:green;"></p>
+      </div>
+
+      <!-- 📞 Schedule a Call -->
+      <div style="margin-top: 40px;">
+        <h3>📞 Schedule a Follow-up Call</h3>
+        <form class="call-form" onsubmit="event.preventDefault(); alert('Your call has been scheduled.');">
+          <input type="text" placeholder="Your Name" required><br>
+          <input type="tel" placeholder="Phone Number" required><br>
+          <button type="submit">Schedule</button>
+        </form>
+      </div>
+
+      <!-- 📥 Download -->
+      <button class="primary" onclick="alert('Case Report Downloaded')">📥 Download Case Report</button>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    © 2025 Microsoft Corporation. All rights reserved.
+  </div>
+
+  <script>
+    function rate(stars) {
+      const starsElements = document.querySelectorAll('.stars span');
+      starsElements.forEach((el, index) => {
+        el.classList.toggle('active', index < stars);
+      });
+      document.getElementById("rating-msg").innerText = `You rated this ${stars} star${stars > 1 ? 's' : ''}. Thank you!`;
+    }
+  </script>
+
+</body>
+</html>
